@@ -57,18 +57,13 @@
 
                 <div class="project-hero-links">
 
-                    <a href="YOUR-LIVE-APP-URL"
+                    <a href="https://visionform-ai.fit/"
                        target="_blank"
                        rel="noopener noreferrer"
                        class="project-primary-link">
                         View Live App ↗
                     </a>
 
-                    <a href="YOUR-GITHUB-URL"
-                       target="_blank"
-                       rel="noopener noreferrer">
-                        GitHub ↗
-                    </a>
 
                 </div>
 
@@ -93,8 +88,12 @@
     </div>
 
 </div>
+<div class="case-study-entry">
+    <span>EXPLORE THE CASE STUDY</span>
+    <span class="case-study-entry-arrow">↓</span>
+</div>
 
-        </section>
+</section>
 
       <!-- Problem & Approach -->
 <section class="case-section problem-section">
@@ -212,112 +211,743 @@
 <!-- How It Works -->
 <section class="case-section how-it-works-section">
 
-    <div class="case-section-label">
-        <p>HOW IT WORKS</p>
+    <div class="how-visual-intro">
+
+    <h2 class="how-title">
+        How it<br>Works
+    </h2>
+
+    <div class="how-title-divider"></div>
+
+    <p class="how-visual-summary">
+        A real-time computer vision pipeline transforms live movement
+        into measurable data, personalized feedback, and progress over time.
+    </p>
+
+    </div>
+    <div class="vision-pipeline">
+
+        <!-- Camera -->
+        <div class="visual-stage">
+            <div class="visual-icon camera-icon">
+                <svg viewBox="0 0 100 140" aria-hidden="true">
+                    <rect x="20" y="5" width="60" height="130" rx="12"></rect>
+                    <line x1="42" y1="15" x2="58" y2="15"></line>
+
+                    <circle cx="50" cy="47" r="7"></circle>
+                    <line x1="50" y1="54" x2="50" y2="82"></line>
+                    <line x1="50" y1="62" x2="35" y2="73"></line>
+                    <line x1="50" y1="62" x2="65" y2="73"></line>
+                    <line x1="50" y1="82" x2="38" y2="105"></line>
+                    <line x1="50" y1="82" x2="62" y2="105"></line>
+                </svg>
+            </div>
+
+            <p class="visual-type">CAMERA INPUT</p>
+            <h3>Live Movement</h3>
+        </div>
+
+
+        <div class="visual-arrow">
+            <span>→</span>
+        </div>
+
+
+        <!-- Pose Detection -->
+        <div class="visual-stage visual-stage-featured">
+            <div class="visual-icon pose-icon">
+                <svg viewBox="0 0 120 150" aria-hidden="true">
+
+                    <!-- skeleton -->
+                    <line x1="60" y1="30" x2="60" y2="62"></line>
+
+                    <line x1="35" y1="52" x2="60" y2="62"></line>
+                    <line x1="85" y1="52" x2="60" y2="62"></line>
+
+                    <line x1="35" y1="52" x2="23" y2="83"></line>
+                    <line x1="85" y1="52" x2="97" y2="83"></line>
+
+                    <line x1="60" y1="62" x2="60" y2="95"></line>
+
+                    <line x1="45" y1="95" x2="60" y2="95"></line>
+                    <line x1="60" y1="95" x2="75" y2="95"></line>
+
+                    <line x1="45" y1="95" x2="36" y2="128"></line>
+                    <line x1="75" y1="95" x2="84" y2="128"></line>
+
+                    <!-- landmarks -->
+                    <circle cx="60" cy="22" r="6"></circle>
+                    <circle cx="35" cy="52" r="5"></circle>
+                    <circle cx="85" cy="52" r="5"></circle>
+                    <circle cx="23" cy="83" r="5"></circle>
+                    <circle cx="97" cy="83" r="5"></circle>
+                    <circle cx="60" cy="62" r="5"></circle>
+                    <circle cx="45" cy="95" r="5"></circle>
+                    <circle cx="75" cy="95" r="5"></circle>
+                    <circle cx="36" cy="128" r="5"></circle>
+                    <circle cx="84" cy="128" r="5"></circle>
+
+                </svg>
+            </div>
+
+            <p class="visual-type">POSE DETECTION</p>
+            <h3>Body Landmarks</h3>
+            <span class="visual-tech">MediaPipe</span>
+        </div>
+
+
+        <div class="visual-arrow">
+            <span>→</span>
+        </div>
+
+
+        <!-- Metrics -->
+        <div class="visual-stage">
+            <div class="metric-visual">
+                <span>FORM</span>
+                <span>MOBILITY</span>
+                <span>SYMMETRY</span>
+                <span>STABILITY</span>
+            </div>
+
+            <p class="visual-type">MOVEMENT ANALYSIS</p>
+            <h3>Movement Metrics</h3>
+        </div>
+
+
+        <div class="visual-arrow">
+            <span>→</span>
+        </div>
+
+
+        <!-- Feedback -->
+        <div class="visual-stage">
+            <div class="score-visual">
+                <strong>88</strong>
+                <span>Great Form</span>
+            </div>
+
+            <p class="visual-type">FEEDBACK</p>
+            <h3>Personalized Score</h3>
+        </div>
+
+
+        <div class="visual-arrow">
+            <span>→</span>
+        </div>
+
+
+        <!-- Progress -->
+        <div class="visual-stage">
+            <div class="progress-visual">
+                <svg viewBox="0 0 120 75" aria-hidden="true">
+                    <polyline points="5,62 28,48 48,53 70,31 89,37 115,12"></polyline>
+
+                    <circle cx="5" cy="62" r="3"></circle>
+                    <circle cx="28" cy="48" r="3"></circle>
+                    <circle cx="48" cy="53" r="3"></circle>
+                    <circle cx="70" cy="31" r="3"></circle>
+                    <circle cx="89" cy="37" r="3"></circle>
+                    <circle cx="115" cy="12" r="3"></circle>
+                </svg>
+            </div>
+
+            <p class="visual-type">TRACKING</p>
+            <h3>Progress Over Time</h3>
+        </div>
+
+    </div>
+<!-- Routine -->
+<div class="how-routine">
+
+    <div class="routine-heading">
+        <p class="routine-label">THE ROUTINE</p>
+        <h3>Five movements. One assessment.</h3>
     </div>
 
-    <div class="how-it-works-header">
+    <div class="routine-poses">
 
-        <h2>
-            From movement to
-            <span>meaningful feedback.</span>
-        </h2>
+        <div class="routine-pose">
+            <img src="../assets/images/visionformai/overhead.png"
+                 alt="Overhead Reach">
+            <p>Overhead Reach</p>
+        </div>
+
+        <div class="routine-pose">
+            <img src="../assets/images/visionformai/singleleg.png"
+                 alt="Single-Leg Stand">
+            <p>Single-Leg Stand</p>
+        </div>
+
+        <div class="routine-pose">
+            <img src="../assets/images/visionformai/hiphinge.png"
+                 alt="Standing Hip Hinge">
+            <p>Standing Hip Hinge</p>
+        </div>
+
+        <div class="routine-pose">
+            <img src="../assets/images/visionformai/splitlunge.png"
+                 alt="Split-Stance Lunge">
+            <p>Split-Stance Lunge</p>
+        </div>
+
+        <div class="routine-pose">
+            <img src="../assets/images/visionformai/squat.png"
+                 alt="Bodyweight Squat Hold">
+            <p>Bodyweight Squat Hold</p>
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- Real-Time Analysis -->
+<div class="live-analysis">
+
+    <div class="live-analysis-intro">
+        <p class="routine-label">REAL-TIME ANALYSIS</p>
 
         <p>
-            VisionFormAI combines real-time computer vision, movement
-            analysis, personalized scoring, and longitudinal tracking
-            to turn a camera-based exercise session into actionable
-            feedback.
+            As each movement is performed, MediaPipe detects body landmarks
+            from the live camera feed and transforms them into data for
+            exercise analysis.
+        </p>
+    </div>
+
+    <div class="live-analysis-grid">
+
+        <div class="live-video-wrap">
+            <video
+                class="live-video"
+                autoplay
+                muted
+                loop
+                playsinline
+                preload="metadata"
+            >
+                <source src="../assets/videos/pose-detection.mp4" type="video/mp4">
+            </video>
+        </div>
+
+        <div class="live-analysis-steps">
+
+            <div class="live-analysis-step">
+                <span>01</span>
+                <p>Live camera input</p>
+            </div>
+
+            <div class="live-analysis-step">
+                <span>02</span>
+                <p>Real-time body landmark detection</p>
+            </div>
+
+            <div class="live-analysis-step">
+                <span>03</span>
+                <p>Movement data for exercise analysis</p>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+</section>
+<!-- Scoring & Personalized Feedback -->
+<section class="case-section scoring-section">
+
+    <div class="scoring-header">
+
+        <div>
+            <p class="scoring-label">SCORING & PERSONALIZED FEEDBACK</p>
+
+            <h2>
+                Turning movement into<br>
+                <span>meaningful feedback.</span>
+            </h2>
+        </div>
+
+        <p class="scoring-intro">
+            VisionFormAI translates movement data into clear, actionable
+            feedback, giving users both an overall session score and a
+            detailed breakdown of their performance.
         </p>
 
     </div>
 
 
-    <!-- Technical Pipeline -->
-    <div class="system-flow">
+    <div class="scoring-content">
 
-        <div class="system-step">
-            <span class="system-number">01</span>
-
-            <div class="system-icon">◉</div>
-
-            <h3>Camera Input</h3>
-
-            <p>
-                A live camera feed captures the user's movement
-                during a guided exercise.
-            </p>
+        <div class="scoring-video-wrap">
+            <video
+                class="scoring-video"
+                autoplay
+                muted
+                loop
+                playsinline
+                preload="metadata"
+            >
+                <source src="../assets/videos/sessioncomplete.mp4" type="video/mp4">
+            </video>
         </div>
 
 
-        <div class="system-connector">→</div>
+        <div class="scoring-details">
 
+            <div class="scoring-detail">
+                <span>01</span>
 
-        <div class="system-step">
-            <span class="system-number">02</span>
+                <div>
+                    <h3>Overall Session Score</h3>
+                    <p>
+                        A 0–100 score summarizes performance across
+                        the completed assessment.
+                    </p>
+                </div>
+            </div>
 
-            <div class="system-icon">◇</div>
+            <div class="scoring-detail">
+                <span>02</span>
 
-            <h3>Pose Detection</h3>
+                <div>
+                    <h3>Pose-Level Feedback</h3>
+                    <p>
+                        Each movement receives its own results, helping users
+                        identify strengths and areas for improvement.
+                    </p>
+                </div>
+            </div>
 
-            <p>
-                MediaPipe detects body landmarks in real time
-                directly in the browser.
-            </p>
-        </div>
+            <div class="scoring-detail">
+                <span>03</span>
 
+                <div>
+                    <h3>Movement Metrics</h3>
+                    <p>
+                        Performance is broken down across form, mobility,
+                        symmetry, and stability.
+                    </p>
+                </div>
+            </div>
 
-        <div class="system-connector">→</div>
-
-
-        <div class="system-step">
-            <span class="system-number">03</span>
-
-            <div class="system-icon">⌁</div>
-
-            <h3>Movement Analysis</h3>
-
-            <p>
-                Landmark data is transformed into movement
-                measurements for each exercise.
-            </p>
-        </div>
-
-
-        <div class="system-connector">→</div>
-
-
-        <div class="system-step">
-            <span class="system-number">04</span>
-
-            <div class="system-icon">◎</div>
-
-            <h3>Scoring & Feedback</h3>
-
-            <p>
-                Movement is translated into clear scores and
-                personalized feedback.
-            </p>
-        </div>
-
-
-        <div class="system-connector">→</div>
-
-
-        <div class="system-step">
-            <span class="system-number">05</span>
-
-            <div class="system-icon">↗</div>
-
-            <h3>Progress Tracking</h3>
-
-            <p>
-                Session results are stored and compared over
-                time to show individual progress.
-            </p>
         </div>
 
     </div>
+
+</section>
+<!-- Progress & Motivation -->
+<section class="case-section progress-section">
+
+    <div class="progress-header">
+
+        <div>
+            <p class="progress-label">PROGRESS & MOTIVATION</p>
+
+            <h2>
+                Progress becomes more<br>
+                <span>meaningful over time.</span>
+            </h2>
+        </div>
+
+        <p class="progress-intro">
+            VisionFormAI tracks performance across sessions so users can see
+            how their movement changes over time, compare results against
+            their own baseline, and recognize long-term improvement.
+        </p>
+
+    </div>
+
+
+    <!-- Progress Views -->
+    <div class="progress-views">
+
+        <!-- Week -->
+        <div class="progress-view">
+            <div class="progress-media">
+                <img
+                    src="../assets/images/visionformai/weekview.png"
+                    alt="VisionFormAI weekly progress view"
+                >
+            </div>
+
+            <div class="progress-view-label">
+                <span>01</span>
+                <p>Week</p>
+            </div>
+        </div>
+
+
+        <!-- Month -->
+        <div class="progress-view">
+            <div class="progress-media">
+                <img
+                    src="../assets/images/visionformai/monthview.png"
+                    alt="VisionFormAI monthly progress view"
+                >
+            </div>
+
+            <div class="progress-view-label">
+                <span>02</span>
+                <p>Month</p>
+            </div>
+        </div>
+
+
+        <!-- All Time -->
+        <div class="progress-view">
+            <div class="progress-media">
+                <video
+                    autoplay
+                    muted
+                    loop
+                    playsinline
+                    preload="metadata"
+                >
+                    <source src="../assets/videos/alltimeview.mp4" type="video/mp4">
+                </video>
+            </div>
+
+            <div class="progress-view-label">
+                <span>03</span>
+                <p>All Time</p>
+            </div>
+        </div>
+
+    </div>
+    <!-- Achievements -->
+<div class="achievements-block">
+
+    <div class="achievements-copy">
+
+        <p class="progress-label">ACHIEVEMENTS</p>
+
+        <h3>
+            Progress worth<br>
+            <span>celebrating.</span>
+        </h3>
+
+        <p class="achievements-description">
+            Milestones and achievements recognize consistency and personal
+            improvement, giving users another way to see progress beyond
+            their session scores.
+        </p>
+
+        <div class="achievement-points">
+
+            <div class="achievement-point">
+                <span>01</span>
+                <p>Consistency milestones</p>
+            </div>
+
+            <div class="achievement-point">
+                <span>02</span>
+                <p>Personal performance gains</p>
+            </div>
+
+            <div class="achievement-point">
+                <span>03</span>
+                <p>Progress-based achievements</p>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="achievements-video-wrap">
+
+        <video
+            class="achievements-video"
+            autoplay
+            muted
+            loop
+            playsinline
+            preload="metadata"
+        >
+            <source src="../assets/videos/achievements.mp4" type="video/mp4">
+        </video>
+
+    </div>
+
+</div>
+</section>
+<!-- UNDER THE HOOD -->
+<section class="case-section architecture-section">
+
+    <div class="architecture-header">
+        <div>
+            <p class="section-label">UNDER THE HOOD</p>
+
+            <h2>
+                From real-time movement to
+                <span>cloud-powered feedback.</span>
+            </h2>
+        </div>
+
+        <p class="architecture-intro">
+            VisionFormAI combines browser-based computer vision with a
+            cloud backend to analyze movement, store results, and deliver
+            personalized feedback.
+        </p>
+    </div>
+
+
+    <div class="architecture-diagram">
+
+        <!-- FRONTEND -->
+        <div class="architecture-node architecture-main-node">
+            <p class="architecture-node-label">FRONTEND</p>
+            <h3>Web Application</h3>
+
+            <div class="architecture-tags">
+                <span>React</span>
+                <span>Vite</span>
+                <span>MediaPipe</span>
+            </div>
+
+            <p class="architecture-node-copy">
+                Captures live movement and performs real-time
+                body landmark detection in the browser.
+            </p>
+        </div>
+
+
+        <div class="architecture-connection">
+            <span>HTTPS</span>
+            <div class="architecture-line"></div>
+            <div class="architecture-arrow">→</div>
+        </div>
+
+
+        <!-- BACKEND -->
+        <div class="architecture-node architecture-main-node">
+            <p class="architecture-node-label">BACKEND</p>
+            <h3>Application API</h3>
+
+            <div class="architecture-tags">
+                <span>FastAPI</span>
+                <span>Amazon ECS</span>
+            </div>
+
+            <p class="architecture-node-copy">
+                Processes application requests and connects the
+                frontend with data and cloud services.
+            </p>
+        </div>
+
+
+        <div class="architecture-connection">
+            <span>CLOUD SERVICES</span>
+            <div class="architecture-line"></div>
+            <div class="architecture-arrow">→</div>
+        </div>
+
+
+        <!-- CLOUD -->
+        <div class="architecture-services">
+
+            <div class="architecture-service">
+                <span class="service-number">01</span>
+                <div>
+                    <h4>PostgreSQL</h4>
+                    <p>Amazon RDS</p>
+                </div>
+            </div>
+
+            <div class="architecture-service">
+                <span class="service-number">02</span>
+                <div>
+                    <h4>Image Storage</h4>
+                    <p>Amazon S3</p>
+                </div>
+            </div>
+
+            <div class="architecture-service">
+                <span class="service-number">03</span>
+                <div>
+                    <h4>Voice Guidance</h4>
+                    <p>Amazon Polly</p>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="architecture-support">
+        <span>CloudFront <small>API delivery</small></span>
+        <span>Application Load Balancer <small>request routing</small></span>
+        <span>CloudWatch <small>monitoring</small></span>
+    </div>
+
+</section>
+<!-- KEY LEARNINGS -->
+<section class="case-section learnings-section">
+
+    <div class="learnings-layout">
+
+        <div class="learnings-heading">
+            <p class="section-label">KEY LEARNINGS & IMPACT</p>
+
+            <h2>
+                What we learned
+                <span>building VisionFormAI.</span>
+            </h2>
+
+            <p>
+                Building and testing the platform revealed lessons that shaped
+                both the technical implementation and the user experience.
+            </p>
+        </div>
+
+
+        <div class="learnings-list">
+
+            <article class="learning-item">
+                <span class="learning-number">01</span>
+
+                <div>
+                    <h3>Real-time computer vision can work in the browser.</h3>
+                    <p>
+                        Movement assessment can run directly from a standard device
+                        camera without backend compute for pose detection. Lighting,
+                        camera position, and background conditions still affect
+                        landmark reliability and must be considered in the experience.
+                    </p>
+                </div>
+            </article>
+
+
+            <article class="learning-item">
+                <span class="learning-number">02</span>
+
+                <div>
+                    <h3>Personalization becomes more valuable over time.</h3>
+                    <p>
+                        Rather than treating each assessment as an isolated result,
+                        VisionFormAI uses a personal baseline and progress tracking
+                        to make changes across sessions visible and meaningful.
+                    </p>
+                </div>
+            </article>
+
+
+            <article class="learning-item">
+                <span class="learning-number">03</span>
+
+                <div>
+                    <h3>Good analysis still needs good communication.</h3>
+                    <p>
+                        Translating raw movement data into clear scores,
+                        movement-specific feedback, and understandable visual
+                        breakdowns made the results more useful and actionable.
+                    </p>
+                </div>
+            </article>
+
+
+            <article class="learning-item">
+                <span class="learning-number">04</span>
+
+                <div>
+                    <h3>The concept can extend beyond general fitness.</h3>
+                    <p>
+                        The same approach could potentially support use cases where
+                        changes in movement quality matter over time, including aging
+                        adults and individuals progressing through rehabilitation.
+                    </p>
+                </div>
+            </article>
+
+        </div>
+
+    </div>
+
+</section>
+<!-- MY CONTRIBUTIONS -->
+<section class="contributions-section">
+
+    <div class="contributions-header">
+        <p class="section-label">MY CONTRIBUTIONS</p>
+
+        <h2>
+            My role in<br>
+            <span>VisionFormAI.</span>
+        </h2>
+
+        <p class="contributions-intro">
+            As lead frontend developer, I focused on translating the team's
+            technical work into a polished, intuitive product experience while
+            contributing to data analysis and end-to-end application testing.
+        </p>
+    </div>
+
+    <div class="contributions-grid">
+
+        <article class="contribution-item">
+            <span class="contribution-number">01</span>
+
+            <h3>Lead Frontend Development</h3>
+
+            <p>
+                Led development of the user-facing application, building the
+                core pages, interactions, animations, progress experiences,
+                and responsive interface.
+            </p>
+        </article>
+
+        <article class="contribution-item">
+            <span class="contribution-number">02</span>
+
+            <h3>Exploratory Data Analysis</h3>
+
+            <p>
+                Analyzed initial pose-estimation data across movements and
+                performers to evaluate detection reliability, variability,
+                and movement metrics, helping inform how raw measurements
+                could translate into meaningful scoring.
+            </p>
+        </article>
+
+        <article class="contribution-item">
+            <span class="contribution-number">03</span>
+
+            <h3>Full-Stack Testing & Collaboration</h3>
+
+            <p>
+                Stayed closely involved with the backend and AWS implementation,
+                testing end-to-end functionality and collaborating across the
+                frontend, API, data, and cloud components.
+            </p>
+        </article>
+
+    </div>
+
+</section>
+<!-- Case Study Navigation -->
+ <div class="case-final-links">
+    <a href="https://visionform-ai.fit/" target="_blank" rel="noopener noreferrer">
+        View Live App ↗
+    </a>
+
+    <a href="https://www.youtube.com/watch?v=pR-IyBrsVGQ" target="_blank" rel="noopener noreferrer">
+        Watch Demo ↗
+    </a>
+</div>
+<section class="case-footer">
+
+    <a href="../index.html#projects" class="case-footer-back">
+        <span class="footer-nav-label">← BACK TO PROJECTS</span>
+        <p>View all projects</p>
+    </a>
+
+    <a href="need-for-feed.html" class="case-footer-next">
+        <div>
+            <span class="footer-nav-label">NEXT PROJECT →</span>
+            <h3>The Need for Feed</h3>
+        </div>
+    </a>
 
 </section>
 
