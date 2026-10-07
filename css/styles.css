@@ -539,7 +539,30 @@ header {
 .project-card:hover .project-link span {
     transform: translateX(4px);
 }
+/* In-progress beauty project */
 
+.beauty-project-image {
+    position: relative;
+    background: #f4f7f6;
+}
+
+.beauty-placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+    height: 100%;
+}
+
+.beauty-placeholder span {
+    color: rgba(185, 104, 127, 0.32);
+
+    font-size: clamp(2rem, 4vw, 3.8rem);
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-align: center;
+}
 /* ========================================
    EXPERIENCE
 ======================================== */
