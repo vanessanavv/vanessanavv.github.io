@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Semiconductor Etch Fault Prediction | Vanessa Navarro</title>
+
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/semi-conductor.css">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <a href="../index.html" class="nav-logo">VN</a>
+
+        <div class="nav-links">
+            <a href="../index.html#about">About</a>
+            <a href="../index.html#experience">Experience</a>
+            <a href="../index.html#projects">Projects</a>
+            <a href="../index.html#contact">Contact</a>
+        </div>
+    </nav>
+
+
+    <!-- Hero -->
+    <main>
+
+        <section class="semi-hero">
+
+            <div class="semi-hero-inner">
+
+                <a href="../index.html#projects" class="semi-back-link">
+                    ← Back to Projects
+                </a>
+
+                <p class="semi-project-type">
+                    MACHINE LEARNING • SEMICONDUCTORS • PHYSICAL SYSTEMS
+                </p>
+
+                <h1>
+                    Semiconductor Etch
+                    <span>Fault Prediction</span>
+                </h1>
+
+                <p class="semi-hero-description">
+                    An exploratory machine learning investigation into whether
+                    time-series sensor behavior from semiconductor etch equipment
+                    can provide useful early warning of equipment faults.
+                </p>
+
+                <p class="semi-project-context">
+                    Independent Learning Project · Machine Learning · Semiconductor Equipment Analytics
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- The Investigation -->
+        <section class="semi-investigation">
+
+            <div class="semi-section-inner">
+
+                <p class="semi-section-label">
+                    THE INVESTIGATION
+                </p>
+
+                <h2 class="semi-investigation-title">
+                    Can changes in equipment sensor behavior provide useful
+                    warning that a fault is <span>approaching?</span>
+                </h2>
+
+                <div class="semi-investigation-intro">
+                    <p>
+                        I built this project as an independent exploration of how machine learning
+                        and data science can be applied to semiconductor manufacturing and physical systems.
+                        Using time-series data from an ion-mill etch tool, I investigated whether recent
+                        sensor behavior could provide useful warning of an upcoming cooling-system fault.
+                    </p>
+                </div>
+
+
+                
+
+            </div>
+
+        </section>
+        <!-- Understanding the Equipment -->
+        <section class="semi-equipment">
+
+            <div class="semi-equipment-inner">
+
+                <div class="semi-equipment-header">
+                    <p class="semi-section-label">UNDERSTANDING THE EQUIPMENT</p>
+
+                    <h2>
+                        Before predicting a fault,
+                        <span>understand the system.</span>
+                    </h2>
+                </div>
+
+                <div class="semi-equipment-content">
+
+                    <div class="semi-equipment-copy">
+                        <p>
+                            The dataset comes from an ion-mill etch tool used in semiconductor
+                            wafer manufacturing. During operation, the equipment records
+                            measurements describing conditions throughout the system.
+                        </p>
+
+                        <p>
+                            These measurements include signals related to chamber pressure,
+                            cooling pressure and flow, and the electrical behavior of the
+                            etch beam.
+                        </p>
+
+                        <p>
+                            For this project, I focused on a cooling-system fault and asked
+                            whether changes across these sensor signals could provide useful
+                            warning before the failure occurred.
+                        </p>
+                    </div>
+
+                    <figure class="semi-equipment-figure">
+                        <div class="semi-equipment-image">
+                            <img
+                                src="../assets/images/semi-conductor/ion-mill-diagram.png"
+                                alt="Diagram of an ion mill etch chamber showing the ion source, wafer, cooling system, chamber pressure, and electrical measurements."
+                            >
+                        </div>
+
+                        <figcaption>
+                            Ion mill etch tool schematic · Source:
+                            <a href="https://phmsociety.org/conference/annual-conference-of-the-phm-society/annual-conference-of-the-prognostics-and-health-management-society-2018-b/phm-data-challenge-6/"
+                            target="_blank"
+                            rel="noopener noreferrer">
+                                PHM Society 2018 Data Challenge
+                            </a>
+                        </figcaption>
+                    </figure>
+
+                </div>
+
+            </div>
+
+        </section>
+        <!-- Sensor Data -->
+        <section class="semi-data">
+
+            <div class="semi-data-inner">
+
+                <div class="semi-data-header">
+                    <p class="semi-section-label">SENSOR DATA</p>
+
+                    <h2>
+                        What the equipment
+                        <span>tells us.</span>
+                    </h2>
+
+                    <p class="semi-data-intro">
+                        Each equipment run contains time-series measurements captured
+                        throughout operation. I focused on signals describing the cooling
+                        system, chamber conditions, and electrical behavior of the etch beam.
+                    </p>
+                </div>
+
+
+                <div class="semi-sensor-grid">
+
+                    <div class="semi-sensor">
+                        <span>01</span>
+                        <h3>Cooling System</h3>
+                        <p>
+                            Pressure and flow measurements describing the behavior of the
+                            equipment's cooling system.
+                        </p>
+                    </div>
+
+                    <div class="semi-sensor">
+                        <span>02</span>
+                        <h3>Chamber Conditions</h3>
+                        <p>
+                            Pressure measurements capturing changes in the environment
+                            inside the process chamber.
+                        </p>
+                    </div>
+
+                    <div class="semi-sensor">
+                        <span>03</span>
+                        <h3>Etch Beam</h3>
+                        <p>
+                            Voltage and current measurements describing the electrical
+                            behavior of the ion beam during operation.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <div class="semi-feature">
+
+                    <p class="semi-section-label">FEATURE ENGINEERING</p>
+
+                    <div class="semi-feature-content">
+
+                        <h2>
+                            Capturing recent
+                            <span>sensor behavior.</span>
+                        </h2>
+
+                        <p>
+                            Rather than treating every individual reading independently,
+                            I summarized recent sensor history using features such as the
+                            mean, minimum, maximum, and variability.
+                        </p>
+
+                        <p>
+                            These rolling-window features gave the model information about
+                            both the current operating state and how sensor behavior had
+                            recently changed.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+        <!-- Defining the Prediction Problem -->
+        <section class="semi-prediction">
+
+            <div class="semi-prediction-inner">
+
+                <p class="semi-section-label">
+                    DEFINING THE PREDICTION PROBLEM
+                </p>
+
+                <div class="semi-prediction-header">
+                    <h2>What counts as an early warning?</h2>
+
+                    <p>
+                        Instead of trying to predict the exact moment of failure, I framed the
+                        problem around whether recent equipment behavior indicated that a
+                        cooling-system fault was approaching.
+                    </p>
+                </div>
+
+                <div class="semi-timeline">
+
+                    <div class="semi-timeline-labels">
+                        <div class="semi-normal-label">
+                            <span>0</span>
+                            <strong>Normal operation</strong>
+                        </div>
+
+                        <div class="semi-prefailure-label">
+                            <span>1</span>
+                            <strong>Pre-failure window</strong>
+                        </div>
+
+                        <div class="semi-fault-label">
+                            <span>×</span>
+                            <strong>Fault</strong>
+                        </div>
+                    </div>
+
+                    <div class="semi-timeline-track">
+                        <div class="semi-normal-track"></div>
+                        <div class="semi-prefailure-track"></div>
+                        <div class="semi-fault-marker"></div>
+                    </div>
+
+                </div>
+
+               <div class="semi-prediction-note">
+                    <p>
+                        Measurements within the defined period before a fault were labeled as
+                        pre-failure behavior, while observations outside that window represented
+                        normal operation. This framed the problem as a classification task:
+                        use recent sensor history to estimate whether the equipment was operating
+                        normally or showing behavior associated with an approaching fault.
+                    </p>
+                </div>
+
+            </div>
+
+        </section>
+        <!-- Modeling Approach -->
+        <section class="semi-model">
+
+            <div class="semi-model-inner">
+
+                <p class="semi-section-label">
+                    MODELING APPROACH
+                </p>
+
+                <div class="semi-model-header">
+                    <h2>Learning patterns associated with approaching faults.</h2>
+
+                    <p>
+                        I trained a Random Forest classifier using the rolling-window
+                        sensor features to estimate the probability that the equipment
+                        was operating within the defined pre-failure window.
+                    </p>
+                </div>
+
+                <div class="semi-model-flow">
+
+                    <div class="semi-model-step">
+                        <span>01</span>
+                        <p>Recent sensor history</p>
+                    </div>
+
+                    <div class="semi-model-arrow">→</div>
+
+                    <div class="semi-model-step">
+                        <span>02</span>
+                        <p>Rolling-window features</p>
+                    </div>
+
+                    <div class="semi-model-arrow">→</div>
+
+                    <div class="semi-model-step">
+                        <span>03</span>
+                        <p>Random Forest</p>
+                    </div>
+
+                    <div class="semi-model-arrow">→</div>
+
+                    <div class="semi-model-step">
+                        <span>04</span>
+                        <p>Fault-risk probability</p>
+                    </div>
+
+                </div>
+
+                <div class="semi-model-detail">
+
+                    <div>
+                        <span>VALIDATION</span>
+                        <p>
+                            Equipment runs were held out from training so the model could
+                            be evaluated on runs it had not previously seen.
+                        </p>
+                    </div>
+
+                    <div>
+                        <span>EARLY-WARNING RULE</span>
+                        <p>
+                            A warning required predicted fault risk to remain at or above
+                            0.50 for 50 consecutive observations, reducing sensitivity to
+                            isolated probability spikes.
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+        <!-- Early-Warning Performance -->
+        <section class="semi-performance">
+
+            <div class="semi-performance-inner">
+
+                <div class="semi-performance-header">
+
+                    <p class="semi-section-label">
+                        EARLY-WARNING PERFORMANCE
+                    </p>
+
+                    <h2>
+                        Testing the model on
+                        unseen equipment runs.
+                    </h2>
+
+                    <p>
+                        I evaluated the final warning approach on held-out equipment runs
+                        that were not used during training. The goal was to measure both
+                        whether the model could detect failure-associated runs and how often
+                        normal runs could be left unflagged.
+                    </p>
+
+                </div>
+
+
+                <!-- Overall Results -->
+                <div class="semi-performance-result">
+
+                    <div class="semi-performance-result-copy">
+
+                        <span class="semi-result-number">01</span>
+
+                        <h3>
+                            The model detected two of three
+                            failure-associated runs.
+                        </h3>
+
+                        <p>
+                            At the selected warning rule, the model detected 66.7% of the
+                            failure-associated held-out runs while correctly leaving 87.3%
+                            of normal runs unflagged.
+                        </p>
+
+                    </div>
+
+                    <div class="semi-performance-figure">
+
+                        <img
+                            src="../assets/images/semi-conductor/final-early-warning-performance.png"
+                            alt="Final early-warning performance on held-out equipment runs showing two of three failure-associated runs detected and 96 of 110 normal runs correctly left unflagged."
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <!-- Example Run -->
+                <div class="semi-performance-example">
+
+                    <div class="semi-performance-example-header">
+
+                        <div>
+                            <span class="semi-result-number">02</span>
+
+                            <h3>
+                                What did a warning look like
+                                during an equipment run?
+                            </h3>
+                        </div>
+
+                        <p>
+                            Predicted fault risk changed throughout each run rather than
+                            producing a single static classification. Sustained periods
+                            above the warning threshold were used to identify potential
+                            early-warning conditions.
+                        </p>
+
+                    </div>
+
+                    <div class="semi-performance-chart">
+
+                        <img
+                            src="../assets/images/semi-conductor/predicted-fault-risk.png"
+                            alt="Predicted fault-risk probability across a held-out equipment run with the warning threshold and start of the defined pre-failure window marked."
+                        >
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+        <!-- Sensor Influence -->
+        <section class="semi-influence">
+
+            <div class="semi-influence-inner">
+
+                <div class="semi-influence-header">
+
+                    <div>
+                        <p class="semi-section-label">
+                            SENSOR INFLUENCE
+                        </p>
+
+                        <h2>
+                            Which signals influenced the model most?
+                        </h2>
+                    </div>
+
+                    <p>
+                        Feature importance provided a way to examine which sensor
+                        measurements contributed most strongly to the model's predictions.
+                        This helped connect the model's output back to the underlying
+                        equipment behavior.
+                    </p>
+
+                </div>
+
+                <div class="semi-influence-figure">
+                    <img
+                        src="../assets/images/semi-conductor/sensor-influence.png"
+                        alt="Chart showing the relative importance of sensor features used by the Random Forest model."
+                    >
+                </div>
+
+                <div class="semi-influence-note">
+                   <p>
+                        Cooling-system pressure and chamber-pressure features were among the
+                        strongest influences on predicted fault risk, while etch-beam measurements
+                        also contributed to the model's decisions.
+                    </p>
+                </div>
+
+            </div>
+
+        </section>
+        <!-- False Warning Analysis -->
+        <section class="semi-false-warnings">
+
+            <div class="semi-false-warnings-inner">
+
+                <div class="semi-false-warnings-copy">
+
+                    <p class="semi-section-label">
+                        ERROR ANALYSIS
+                    </p>
+
+                    <h2>
+                        Why did the model generate false warnings?
+                    </h2>
+
+                    <p class="semi-false-warnings-intro">
+                        Some normal equipment runs triggered the early-warning rule even
+                        though no cooling-system fault followed. I compared these false
+                        warnings with true pre-failure behavior to understand where the
+                        model was becoming confused.
+                    </p>
+
+                    <div class="semi-false-warnings-finding">
+                        <span>KEY FINDING</span>
+
+                        <p>
+                            False warnings showed some of the same cooling-system and
+                            chamber-pressure shifts seen before actual faults, making
+                            those operating conditions difficult for the model to distinguish.
+                        </p>
+                    </div>
+
+                </div>
+
+                <div class="semi-false-warnings-figure">
+                    <img
+                        src="../assets/images/semi-conductor/why-false-warnings.png"
+                        alt="Comparison of sensor behavior during true pre-failure periods and false warnings."
+                    >
+                </div>
+
+            </div>
+
+        </section>
+        <!-- Limitations & Next Iteration -->
+        <section class="semi-limitations">
+
+            <div class="semi-limitations-inner">
+
+                <div class="semi-limitations-header">
+
+                    <p class="semi-section-label">
+                        LIMITATIONS & NEXT ITERATION
+                    </p>
+
+                    <h2>
+                        A useful first signal,
+                        not a finished predictive-maintenance system.
+                    </h2>
+
+                    <p>
+                        The experiment showed that recent sensor behavior contained
+                        information associated with approaching faults, but the results
+                        also highlighted important limits in the data and modeling approach.
+                    </p>
+
+                </div>
+
+
+                <div class="semi-limitations-grid">
+
+                    <div class="semi-limitation-item">
+                        <span>01</span>
+
+                        <h3>Limited failure examples</h3>
+
+                        <p>
+                            Despite more than 1.5 million usable sensor observations, the
+                            final dataset contained only 13 failure-associated runs. The
+                            held-out test set included just three, so the detection results
+                            should be treated as exploratory rather than broadly generalizable.
+                        </p>
+                    </div>
+
+
+                    <div class="semi-limitation-item">
+                        <span>02</span>
+
+                        <h3>Anonymized timing and measurements</h3>
+
+                        <p>
+                            The dataset does not provide physical units for the anonymized
+                            measurements, and the recorded fault timestamp represents
+                            equipment shutdown rather than the unknown beginning of degradation.
+                        </p>
+                    </div>
+
+
+                    <div class="semi-limitation-item">
+                        <span>03</span>
+
+                        <h3>Operating-state overlap</h3>
+
+                        <p>
+                            False-warning analysis showed that some normal operating states
+                            resembled true pre-failure behavior, suggesting that a stronger
+                            model may need more explicit awareness of recipe and operating context.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <div class="semi-next-iteration">
+
+                    <p class="semi-section-label">
+                        WHERE I WOULD TAKE IT NEXT
+                    </p>
+
+                    <h3>
+                        Make the model more aware of
+                        <span>how the equipment is operating.</span>
+                    </h3>
+
+                    <p>
+                        A next iteration could incorporate recipe, process-step, and other
+                        operating-state information alongside the sensor features, then
+                        evaluate the approach across additional fault modes and equipment
+                        runs. With more independent failure examples, warning thresholds
+                        and prediction horizons could also be validated more reliably.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+        <!-- Project Takeaway -->
+        <section class="semi-takeaway">
+
+            <div class="semi-takeaway-inner">
+
+                <p class="semi-section-label">
+                    PROJECT TAKEAWAY
+                </p>
+
+                <div class="semi-takeaway-content">
+
+                    <h2>
+                        Machine learning is only part
+                        of the engineering problem.
+                    </h2>
+
+                    <div class="semi-takeaway-copy">
+
+                        <p>
+                            This project gave me hands-on experience working with
+                            time-series sensor data from semiconductor manufacturing
+                            equipment and translating raw equipment behavior into a
+                            machine-learning problem.
+                        </p>
+
+                        <p>
+                            More importantly, it showed me that useful predictive
+                            maintenance depends on more than model accuracy. Defining
+                            the warning horizon, understanding operating context,
+                            evaluating false warnings, and interpreting sensor behavior
+                            are all part of determining whether a model could actually
+                            provide useful information.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="semi-takeaway-skills">
+
+                    <div>
+                        <span>01</span>
+                        <p>Time-Series Analysis</p>
+                    </div>
+
+                    <div>
+                        <span>02</span>
+                        <p>Feature Engineering</p>
+                    </div>
+
+                    <div>
+                        <span>03</span>
+                        <p>Machine Learning</p>
+                    </div>
+
+                    <div>
+                        <span>04</span>
+                        <p>Model Interpretation</p>
+                    </div>
+
+                    <div>
+                        <span>05</span>
+                        <p>Error Analysis</p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+  <!-- Project Navigation -->
+        <section class="semi-project-nav">
+
+            <a href="../index.html#projects" class="semi-back-projects">
+
+                <span class="semi-nav-label">
+                    ← BACK TO PROJECTS
+                </span>
+
+                <span class="semi-nav-title">
+                    View all projects
+                </span>
+
+            </a>
+
+        </section>
+
+    </main>
+
+</body>
+
+</html>
